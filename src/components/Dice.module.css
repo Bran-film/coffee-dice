@@ -1,0 +1,139 @@
+/*
+    General Styles
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #b33951;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  width: 250px;
+  padding: 60px 0 40px;
+  border-radius: 30px;
+  background: #eeeeee;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Dice Styles */
+.dice {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transition: 1s ease;
+}
+
+@keyframes rolling {
+  50% {
+    transform: rotateX(455deg) rotateY(455deg);
+  }
+}
+
+.dice.rolling {
+  animation: rolling 4s;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 5px solid #f6f3f0;
+  transform-style: preserve-3d;
+  background: linear-gradient(145deg, #fff, #dddbd8);
+  /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.face::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 5px solid #f6f3f0;
+  transform-style: preserve-3d;
+  background: linear-gradient(145deg, #fff, #dddbd8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.face span {
+  position: absolute;
+  transform: translateZ(1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #131210;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.face-1 {
+  transform: translateZ(50px);
+}
+.face-2 {
+  transform: rotateX(180deg) translateZ(50px);
+}
+.face-3 {
+  transform: rotateX(90deg) translateZ(50px);
+}
+.face-4 {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+.face-5 {
+  transform: rotateY(90deg) translateZ(50px);
+}
+.face-6 {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+/* Roll Button styles */
+
+.roll {
+  cursor: pointer;
+  color: #b33951;
+  margin-top: 60px;
+  padding: 6px 12px;
+  border-radius: 3px;
+  font: 700 16px "Montserrat";
+  border: 2px solid #b33951;
+  transition: 0.4s;
+}
+
+.roll:hover {
+  color: #fff;
+  background: #b33951;
+}
+
+.roll:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.roll:disabled:hover {
+  background: none;
+  color: #b33951;
+}
