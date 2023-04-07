@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/coffee-dice/static/css/main.4b0dd46e.css",
+    "main.js": "/coffee-dice/static/js/main.aa615754.js",
+    "static/js/787.55cbb3ee.chunk.js": "/coffee-dice/static/js/787.55cbb3ee.chunk.js",
+    "index.html": "/coffee-dice/index.html",
+    "main.4b0dd46e.css.map": "/coffee-dice/static/css/main.4b0dd46e.css.map",
+    "main.aa615754.js.map": "/coffee-dice/static/js/main.aa615754.js.map",
+    "787.55cbb3ee.chunk.js.map": "/coffee-dice/static/js/787.55cbb3ee.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b0dd46e.css",
+    "static/js/main.aa615754.js"
+  ]
+}
