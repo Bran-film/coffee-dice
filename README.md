@@ -28,7 +28,7 @@ Try the live demo here: [Coffee Dice](https://bran-film.github.io/coffee-dice/)
 ## Installation
 
 1. Clone this repository:
-   git clone https://github.com/Bran-film/coffee-dice.git
+   git clone <https://github.com/Bran-film/coffee-dice.git>
 
 2. Navigate to the project directory:
    cd coffee-dice
