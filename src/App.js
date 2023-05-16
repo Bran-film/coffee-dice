@@ -12,7 +12,7 @@ function App() {
       <p>
         This application will help you decide which coffee brewing method to
         use. Simply select your available brewing methods and roll the dice! You
-        need to select at least two methods. Enjoy your coffee!
+        need to select between two and six methods. Enjoy your coffee!
       </p>
       <BrewMethodSelection
         selectedMethods={selectedMethods}

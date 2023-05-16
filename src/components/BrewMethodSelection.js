@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./BrewMethodSelection.module.css";
 
 const initialMethods = [
@@ -6,33 +6,33 @@ const initialMethods = [
   "Hario Switch",
   "French Press",
   "Aeropress",
-  "Delter Press",
   "Chemex",
   "Kalita Wave",
   "Moka Pot",
-  "Clever Dripper",
   "Syphon",
-  "Percolator",
-  "Melitta",
-  "Bonavita",
-  "Blue Bottle Dripper",
   "Turkish Coffee",
-  "Timemore",
-  "Espresso",
+  "Portafilter",
   "Cold Brew",
-  "Gina",
-  "Kono",
-  "Origami",
-  "Cafelat",
-  "Orea",
-  "Fellow Stagg",
-  "Moccamaster",
 ];
 
 function BrewMethodSelection({ selectedMethods, setSelectedMethods }) {
   const [allMethods, setAllMethods] = useState(initialMethods);
   const [customMethod, setCustomMethod] = useState("");
   const [error, setError] = useState(null);
+
+  // Save selectedMethods to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("selectedMethods", JSON.stringify(selectedMethods));
+  }, [selectedMethods]);
+
+  // Load selectedMethods from localStorage when component mounts
+  useEffect(() => {
+    const loadedMethods = localStorage.getItem("selectedMethods");
+    if (loadedMethods) {
+      setSelectedMethods(JSON.parse(loadedMethods));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const toggleMethod = (method) => {
     if (selectedMethods.includes(method)) {
@@ -50,6 +50,8 @@ function BrewMethodSelection({ selectedMethods, setSelectedMethods }) {
     if (customMethod && !allMethods.includes(customMethod)) {
       setAllMethods([...allMethods, customMethod]);
       setCustomMethod("");
+      // Add the custom method to the selected methods
+      toggleMethod(customMethod);
     }
   };
 
@@ -84,10 +86,10 @@ function BrewMethodSelection({ selectedMethods, setSelectedMethods }) {
           type="text"
           value={customMethod}
           onChange={handleCustomMethodChange}
-          placeholder="Add your custom method..."
+          placeholder="Custom..."
         />
         <button type="button" onClick={addCustomMethod}>
-          Add Custom Method
+          Add Custom!
         </button>
         <button type="submit" className={styles.submitButton}>
           Submit
