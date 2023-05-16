@@ -2,23 +2,14 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "./Dice.module.css";
 
-const options = [
-  "Cold Brew",
-  "French Press",
-  "V60",
-  "Switch",
-  "AeroPress",
-  "Espresso",
-];
-
-function Dice() {
+function Dice({ options }) {
   const [result, setResult] = useState(null);
   const [spinning, setSpinning] = useState(false);
 
   useEffect(() => {
     let timer;
     if (spinning) {
-      const randomIndex = Math.floor(Math.random() * options.length);
+      const randomIndex = Math.floor(Math.random() * 6); // Always generate a number between 0 and 5
       const randomX = Math.floor(Math.random() * 4) * 90;
       const randomY = Math.floor(Math.random() * 4) * 360;
       timer = setTimeout(() => {
@@ -33,6 +24,12 @@ function Dice() {
     setSpinning(true);
   };
 
+  // Create an array of 6 elements, filled with the selected methods and "ROLL AGAIN!" if necessary
+  const diceSides = [
+    ...options,
+    ...Array(6 - options.length).fill("ROLL AGAIN!"),
+  ];
+
   return (
     <div className={styles.container}>
       <div
@@ -45,7 +42,7 @@ function Dice() {
             : {}
         }
       >
-        {options.map((option, index) => (
+        {diceSides.map((option, index) => (
           <div
             key={index}
             className={`${styles.face} ${styles[`face-${index + 1}`]}`}

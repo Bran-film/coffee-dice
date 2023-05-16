@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.introText {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.option input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.submitButton {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submitButton:hover {
+  background: #666;
+}
