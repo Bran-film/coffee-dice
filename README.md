@@ -61,4 +61,4 @@ Contributions are always welcome! Feel free to open an issue or submit a pull re
 
 ## License
 
-This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
+This project is licensed under the [GNU General Public License v3.0](LICENSE). Please see the [LICENSE](LICENSE) file for more information.
