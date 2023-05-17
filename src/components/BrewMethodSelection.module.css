@@ -33,10 +33,7 @@
   align-items: center;
   margin: 0.5rem;
   font-size: 1.2rem;
-}
-
-.option input[type="checkbox"] {
-  margin-right: 0.5rem;
+  cursor: pointer;
 }
 
 .submitButton {
@@ -51,4 +48,20 @@
 
 .submitButton:hover {
   background: #666;
+}
+
+.option input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #000;
+  width: 20px;
+  height: 20px;
+  outline: none;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.option input[type="checkbox"]:checked {
+  background: #000;
 }

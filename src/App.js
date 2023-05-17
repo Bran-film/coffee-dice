@@ -8,12 +8,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Welcome to the Coffee Dice!</h1>
-      <p>
-        This application will help you decide which coffee brewing method to
-        use. Simply select your available brewing methods and roll the dice! You
-        need to select between two and six methods. Enjoy your coffee!
-      </p>
       <BrewMethodSelection
         selectedMethods={selectedMethods}
         setSelectedMethods={setSelectedMethods}

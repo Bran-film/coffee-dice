@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import styles from "./BrewMethodSelection.module.css";
 
 const initialMethods = [
-  "V60",
-  "Hario Switch",
-  "French Press",
   "Aeropress",
   "Chemex",
+  "Cold Brew",
+  "French Press",
+  "Hario Switch",
   "Kalita Wave",
   "Moka Pot",
+  "Portafilter",
   "Syphon",
   "Turkish Coffee",
-  "Portafilter",
-  "Cold Brew",
+  "V60",
 ];
 
 function BrewMethodSelection({ selectedMethods, setSelectedMethods }) {
