@@ -57,6 +57,13 @@ function BrewMethodSelection({ selectedMethods, setSelectedMethods }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    // If a custom method is entered, add it
+    if (customMethod) {
+      addCustomMethod();
+    }
+
+    // Then check if enough methods are selected
     if (selectedMethods.length < 2) {
       setError("Please select at least 2 methods");
       return;
@@ -86,15 +93,14 @@ function BrewMethodSelection({ selectedMethods, setSelectedMethods }) {
           type="text"
           value={customMethod}
           onChange={handleCustomMethodChange}
-          placeholder="Custom..."
+          placeholder="Add your custom method..."
+          className={styles.customMethodInput}
         />
-        <button type="button" onClick={addCustomMethod}>
-          Add Custom!
-        </button>
         <button type="submit" className={styles.submitButton}>
-          Submit
+          Add
         </button>
       </form>
+
       {error && <p>{error}</p>}
     </div>
   );
